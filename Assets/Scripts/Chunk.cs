@@ -1,7 +1,5 @@
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using System.Collections;
-using System.Collections.Generic;
 
 public class Chunk : MonoBehaviour
 {
@@ -16,16 +14,15 @@ public class Chunk : MonoBehaviour
 
         transform.name = "Chunk at (" + transform.position.x / World.instance.chunkWidth + ", " + transform.position.y / World.instance.chunkWidth + ")";
 
-        StartCoroutine(Init());
+        Init();
     }
 
-    IEnumerator Init()
+    void Init()
     {
-        StartCoroutine(GenerateChunk());
-        yield return 0;
+        GenerateChunk();
     }
 
-    IEnumerator GenerateChunk()
+    void GenerateChunk()
     {
         Vector3 center = new Vector3(World.instance.worldSizeInChunks * World.instance.chunkWidth / 2, World.instance.worldSizeInChunks * World.instance.chunkWidth / 2, 0);
 
@@ -90,12 +87,11 @@ public class Chunk : MonoBehaviour
                 }
             }
         }
-        StartCoroutine(CreateTileMap());
 
-        yield return 0;
+        CreateTileMap();
     }
 
-    IEnumerator CreateTileMap()
+    void CreateTileMap()
     {
         byte block;
         Vector3Int pos = new Vector3Int();
@@ -134,7 +130,6 @@ public class Chunk : MonoBehaviour
         }
 
         tilemap.RefreshAllTiles();
-        yield return 0;
     }
 
     public void SetTile(Vector3Int pos, TileBase newTile)
