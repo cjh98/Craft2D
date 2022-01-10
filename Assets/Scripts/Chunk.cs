@@ -42,8 +42,6 @@ public class Chunk : MonoBehaviour
                 heightValue = World.instance.noiseHeightModifier * NoiseGen.GenerateNoise(x + gameObject.transform.position.x, y + gameObject.transform.position.y,
                     World.instance.scale, World.instance.mainOffset, World.instance.octaves, World.instance.frequency, World.instance.amplitude);
 
-                heightValue = 100;
-
                 // this creates a radial gradient, land gets lower when it gets farther from the center.
                 dist = Vector3.SqrMagnitude(center - new Vector3(transform.position.x, transform.position.y, 0));
                 valToSubtract = dist * World.instance.radialGradientScale;

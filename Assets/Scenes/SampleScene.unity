@@ -390,7 +390,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chunkFab: {fileID: 1292485733886806589, guid: 68c1769fc0a6e9c4f9c2cef861a81dd4, type: 3}
-  viewDistanceInChunks: 16
+  viewDistanceInChunks: 1
   blockTypes:
   - name: Water
     tile: {fileID: 11400000, guid: 761a5090645c55f45b6cf4700969f986, type: 2}
